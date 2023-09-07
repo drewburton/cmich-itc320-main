@@ -12,7 +12,7 @@ const score4 = parseInt(prompt("Enter test score"));
 const total = score1 + score2 + score3 + score4;
 
 // calculate the average
-const average = parseInt(total / 4);
+const average = parseFloat(total / 4).toFixed(2);
 
 alert(`Score 1 = ${score1}\nScore 2 = ${score2}\nScore 3 = ${score3}\nScore4 = ${score4}\nAverage score = ${average}`)
 
