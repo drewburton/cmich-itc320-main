@@ -21,5 +21,5 @@ const html = `<p>Score 1 = ${score1}</p>
     <p>Score 2 = ${score2}</p>
     <p>Score 3 = ${score3}</p>
     <p>Score 4 = ${score4}</p>
-    <p>Average score = ${average}</p>`;
+    <p><b><u>Average score = ${average}</u></b></p>`;
 document.write(html);
