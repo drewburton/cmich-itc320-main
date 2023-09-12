@@ -1,25 +1,35 @@
 "use strict";
 
-// get 4 scores from user and add them together
-const score1 = parseInt(prompt("Enter test score"));
+const scores = [];
 
-const score2 = parseInt(prompt("Enter test score"));
+const $ = function(selector) {
+    return document.querySelector(selector);
+}
 
-const score3 = parseInt(prompt("Enter test score"));
+const addScore = function(selector) {
+    const score = parseInt($("#score").value);
+    if (score >= 0 && score <= 100) {
+        scores[scores.length] = score;
+        $("#score").value = "";
+        $("#average").value = calculateAverage();
+    }
+    else {
+        alert("Score must be a valid number from 0 through 100");
+    }
+    $("#score").focus();
+};
 
-const score4 = parseInt(prompt("Enter test score"));
+const calculateAverage = () => {
+    let total = 0;
+    for (let val of scores) {
+        total = total + val;
+    }
+    return parseInt(total / scores.length);
+};
 
-const total = score1 + score2 + score3 + score4;
+const processDOM = function() {
+    $("#add").addEventListener("click", addScore);
+    $("#score").focus();
+}
 
-// calculate the average
-const average = parseFloat(total / 4).toFixed(2);
-
-alert(`Score 1 = ${score1}\nScore 2 = ${score2}\nScore 3 = ${score3}\nScore4 = ${score4}\nAverage score = ${average}`)
-
-// display in browser page
-const html = `<p>Score 1 = ${score1}</p>
-    <p>Score 2 = ${score2}</p>
-    <p>Score 3 = ${score3}</p>
-    <p>Score 4 = ${score4}</p>
-    <p><b><u>Average score = ${average}</u></b></p>`;
-document.write(html);
+document.addEventListener("DOMContentLoaded", processDOM);
