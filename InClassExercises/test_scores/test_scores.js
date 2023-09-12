@@ -2,11 +2,9 @@
 
 const scores = [];
 
-const $ = function(selector) {
-    return document.querySelector(selector);
-}
+const $ = selector => document.querySelector(selector);
 
-const addScore = function(selector) {
+const addScore = selector => {
     const score = parseInt($("#score").value);
     if (score >= 0 && score <= 100) {
         scores[scores.length] = score;
@@ -27,9 +25,14 @@ const calculateAverage = () => {
     return parseInt(total / scores.length);
 };
 
-const processDOM = function() {
+/*
+const processDOM = () => {
     $("#add").addEventListener("click", addScore);
     $("#score").focus();
 }
+*/
 
-document.addEventListener("DOMContentLoaded", processDOM);
+document.addEventListener("DOMContentLoaded", () => {
+    $("#add").addEventListener("click", addScore);
+    $("#score").focus();
+});
