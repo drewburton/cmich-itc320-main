@@ -33,5 +33,10 @@ var clearEntries = () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     $("#calculate").addEventListener("click", processEntries);
+    $("#mpg").addEventListener("dblclick", clearEntries);
     $("#miles").focus();
+
+    $("#miles").addEventListener("focus", () => { $("#miles").value = ""; });
+    $("#gallons").addEventListener("focus", () => { $("#gallons").value = ""; });
+    $("#gallons").addEventListener("focusout", processEntries);
 });
