@@ -2,15 +2,49 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">	
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Grade Converter</title>
 </head>
+
 <body>
     <main>
         <h1>Show letter grade</h1>
         <script>
+            "use strict";
+            let number_grade = prompt("Enter number grade from 0 through 100\nOr enter 999 to end entries")
+            while (number_grade != 999) {
+                if (number_grade >= 0 && number_grade <= 100) {
+                    if (number_grade >= 94) {
+                        document.write(`<p>Grade ${number_grade} = A </p>`)
+                    } else if (number_grade >= 90) {
+                        document.write(`<p>Grade ${number_grade} = A- </p>`)
+                    } else if (number_grade >= 87) {
+                        document.write(`<p>Grade ${number_grade} = B+ </p>`)
+                    } else if (number_grade >= 84) {
+                        document.write(`<p>Grade ${number_grade} = B </p>`)
+                    } else if (number_grade >= 80) {
+                        document.write(`<p>Grade ${number_grade} = B- </p>`)
+                    } else if (number_grade >= 77) {
+                        document.write(`<p>Grade ${number_grade} = C+ </p>`)
+                    } else if (number_grade >= 74) {
+                        document.write(`<p>Grade ${number_grade} = C </p>`)
+                    } else if (number_grade >= 70) {
+                        document.writeln(`<p>Grade ${number_grade} = C- </p>`)
+                    } else if (number_grade >= 67) {
+                        document.write(`<p>Grade ${number_grade} = D+ </p>`)
+                    } else if (number_grade >= 64) {
+                        document.write(`<p>Grade ${number_grade} = D </p>`)
+                    } else if (number_grade >= 60) {
+                        document.write(`<p>Grade ${number_grade} = D- </p>`)
+                    } else {
+                        document.write(`<p>Grade ${number_grade} = E </p>`)
+                    }
+                }
 
+                number_grade = prompt("Enter number grade from 0 through 100\nOr enter 999 to end entries");
+            }
         </script>
     </main>
 </body>
+
 </html>
