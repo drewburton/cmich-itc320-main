@@ -1,15 +1,34 @@
 <!DOCTYPE html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Temperature Converter</title>
 </head>
+
 <body>
     <main>
         <h1>Convert from Fahrenheit to Celsius</h1>
         <script>
-            alert('I was changed in GitHub!');
+            "use strict";
+
+            let get_temp = () => parseInt(prompt('Enter Fahrenheit temperature (999 to end)')).toFixed(1);
+            let fahrenheit_temp = get_temp();
+
+            // validate temp entered is between -100 and 212
+            // prompt user to enter value until they enter 999 to end
+            while (fahrenheit_temp != 999) {
+                if (fahrenheit_temp < -100 || fahrenheit_temp > 212 || isNaN(fahrenheit_temp)) {
+                    alert("You entered " + fahrenheit_temp + ".\nEntry must range from -100 to +212");
+                } else {
+                    let celsius_temp = (5.0 / 9.0 * (fahrenheit_temp - 32.0)).toFixed(1)
+                    document.writeln(fahrenheit_temp + ' F = ' + celsius_temp + ' C')
+                    document.write('<br>')
+                }
+                fahrenheit_temp = get_temp();
+            }
         </script>
     </main>
 </body>
+
 </html>
