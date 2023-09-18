@@ -6,21 +6,26 @@ body {
     border: 3px solid blue;
     padding: 0 2em 1em;
 }
+
 h1 {
     color: blue;
 }
+
 div {
     margin-bottom: 1em;
 }
+
 label {
     display: inline-block;
     width: 11em;
     text-align: right;
 }
+
 input {
     margin-left: 1em;
     margin-right: 0.5em;
 }
+
 span {
     color: red;
 }
@@ -28,4 +33,10 @@ span {
 /*div that's the 2nd child of its parent element (main) */
 div:nth-child(2) {
     margin-bottom: 1.5em;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
