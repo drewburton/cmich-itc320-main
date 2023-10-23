@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Reservation request</title>
 	<link rel="stylesheet" href="reservation.css">
 </head>
-	
+
 <body>
 	<h1>Reservation Request</h1>
-	<form action="response.html" method="get"
-    	name="reservation_form" id="reservation_form">
+	<form action="response.html" method="get" name="reservation_form" id="reservation_form">
 		<fieldset>
-        	<legend>General Information</legend>
+			<legend>General Information</legend>
 			<div>
 				<label for="arrival_date">Arrival date:</label>
 				<input type="text" name="arrival_date" id="arrival_date" autofocus>
@@ -29,7 +29,7 @@
 					<option value="1">1</option>
 					<option value="2">2</option>
 					<option value="3">3</option>
-					<option value="4">4</option>        		        		        		
+					<option value="4">4</option>
 				</select>
 			</div>
 			<div>
@@ -39,15 +39,15 @@
 					<option value="1">1</option>
 					<option value="2">2</option>
 					<option value="3">3</option>
-					<option value="4">4</option>        		        		        		
+					<option value="4">4</option>
 				</select>
-			</div>        	
+			</div>
 		</fieldset>
 		<fieldset>
-        	<legend>Preferences</legend>
+			<legend>Preferences</legend>
 			<div>
 				<label>Room type:</label>
-				<input type="radio" name="room" id="standard" class="left" checked>Standard	        	
+				<input type="radio" name="room" id="standard" class="left" checked>Standard
 				<input type="radio" name="room" id="business" class="left">Business
 				<input type="radio" name="room" id="suite" class="left last">Suite
 			</div>
@@ -59,9 +59,9 @@
 			<div>
 				<input type="checkbox" name="smoking" id="smoking">Smoking
 			</div>
-		</fieldset>		
+		</fieldset>
 		<fieldset>
-    		<legend>Contact Information</legend>
+			<legend>Contact Information</legend>
 			<div>
 				<label for="name">Name:</label>
 				<input type="text" name="name" id="name">
@@ -85,4 +85,5 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="reservation.js"></script>
 </body>
+
 </html>
