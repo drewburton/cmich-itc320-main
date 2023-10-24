@@ -1,0 +1,70 @@
+h1 {
+	position: relative;
+	text-align: center;
+	font-size: 3em;
+	font-family: 'Courier New'
+}
+
+.logic {
+	background-color: darkgreen;
+	border-radius: 0.7em;
+	width: 6em;
+	height: 3em;
+	border-color: black;
+	color: white;
+	font-family: 'Arial';
+	font-size: 1em;
+}
+
+#indexPar {
+	text-align: center;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	font-size: 1.2em;
+}
+
+#login {
+	display: flex;
+	justify-content: center;
+}
+
+.pass {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+ol {
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	max-width: fit-content;
+	padding-inline-start: 0px;
+}
+
+li {
+	padding: 10px;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	border: 1px solid #000;
+	background-color: darkgreen;
+	border-radius: 1em;
+	margin: 5px 0;
+	color: white;
+}
+
+#add {
+	margin: 10px;
+}
+
+input {
+	border: none;
+	background-color: darkgreen;
+	color: white;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.delete {
+	border: none;
+	background: transparent;
+	color: white;
+}
