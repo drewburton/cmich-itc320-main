@@ -1,10 +1,15 @@
 "use strict";
 
-$(document).ready( () => {
+$(document).ready(() => {
 	// display data from session storage
-	
-	$("back").click( () => {
-		
+	$("#email").text(sessionStorage.email);
+	$("#phone").text(sessionStorage.phone);
+	$("#zip").text(sessionStorage.zip);
+	$("#dob").text(sessionStorage.dob);
+
+	$("#back").click(() => {
+		console.log('back');
+		history.back();
 	}); // end of click()
-	
+
 }); // end of ready()
