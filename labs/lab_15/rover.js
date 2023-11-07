@@ -7,6 +7,13 @@ const request = "?api_key=DEMO_KEY&page=1";
 const roverData = new Map();
 
 // asynchronous getJson() function that makes API requests goes here
+const getJson = async url => {
+    return fetch(url).then(response => {
+        return response.json();
+    }).then(json => {
+        return json;
+    });
+}
 
 const getSelectedDate = () => {
     const year = $("#year").val();
@@ -16,7 +23,7 @@ const getSelectedDate = () => {
 };
 
 const clearPrevious = () => {
-    $("#display").html(""); 
+    $("#display").html("");
     $("#camera").html("");
     $("#year").html("");
     $("#month").html("");
@@ -43,7 +50,7 @@ const getOptionHtml = (min, max, selected) => {
     return options;
 };
 
-$(document).ready( async () => {
+$(document).ready(async () => {
     // get rover data
     const url = domain + request;
     const json = await getJson(url);                    // asynchronous call to getJson()
@@ -58,7 +65,7 @@ $(document).ready( async () => {
     $("#rover").append(roverOptions);
 
     // change event handler for rover dropdown
-    $("#rover").change( evt => {
+    $("#rover").change(evt => {
         clearPrevious();
 
         // get data for currently selected rover
@@ -70,7 +77,7 @@ $(document).ready( async () => {
             displayRoverData(data);
 
             // get options for camera dropdown
-            let cameraOptions= '<option value="">All Cameras</option>';
+            let cameraOptions = '<option value="">All Cameras</option>';
             for (let camera of data.cameras) {
                 cameraOptions += `<option value="${camera.name}">${camera.full_name}</option>`;
             }
@@ -81,17 +88,17 @@ $(document).ready( async () => {
             const landingDateParts = data.landing_date.split("-");
             const maxDateParts = data.max_date.split("-");
 
-            $("#year").append( getOptionHtml(landingDateParts[0], maxDateParts[0], maxDateParts[0]) );
-            $("#month").append( getOptionHtml(1, 12, maxDateParts[1]) );
-            $("#date").append( getOptionHtml(1, 31, maxDateParts[2]) );
+            $("#year").append(getOptionHtml(landingDateParts[0], maxDateParts[0], maxDateParts[0]));
+            $("#month").append(getOptionHtml(1, 12, maxDateParts[1]));
+            $("#date").append(getOptionHtml(1, 31, maxDateParts[2]));
 
-        } else {    
+        } else {
             $("#options").hide();
         }
     });
 
     // click event handler for View Photos button
-    $("#view").click( async () => {
+    $("#view").click(async () => {
         $("#display").html("Loading...");
 
         // get rover, date, and camera info and build API URL
